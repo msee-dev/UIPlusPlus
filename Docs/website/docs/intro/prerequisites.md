@@ -28,23 +28,23 @@ Here are some things to keep in mind when creating your very own XML configurati
 5. The value of an XML element is place between the opening and closing tags but not all elements have values necessarily.
 6. XML attribute values are surrounded by either single or double-quotes. Beware of smart-quotes when copying and pasting snippets from external sources; XML does not treat these the same as non-smart-quotes.
 
-## VBScript
+## PowerShell
 
-Yes, VBScript. It is old-school for sure, but it has a simple syntax, is quite robust, and works well in the context of UI++.
+UI++ now uses PowerShell for script evaluation instead of VBScript. PowerShell has a more modern syntax and is actively maintained by Microsoft.
 
-You don't generally need to know a lot about VBScript to be successful with UI++ as there is no actual scripting directly involved. Knowing the basic syntax and functions available in VBScript opens up many advanced techniques and capabilities, however.
+You don't generally need to know a lot about PowerShell to be successful with UI++ as there is no actual scripting directly involved. Knowing the basic syntax and functions available in PowerShell opens up many advanced techniques and capabilities, however.
 
-An excellent reference for VBScript is the [w3schools VBScript Functions](https://www.w3schools.com/asp/asp_ref_vbscript_functions.asp) page. Note that this reference is geared toward web development, but it is accurate and sufficient for most needs when writing your UI++ configuration.
-Here are some common functions that are often used with UI++:
+An excellent reference for PowerShell is the [PowerShell Documentation](https://docs.microsoft.com/en-us/powershell/) page. 
 
-* InStr
-* Left
-* Len
-* Mid
-* Replace
-* Split
-* StrComp
-* Trim
+Here are some common operations that are often used with UI++:
+
+* String length: `.Length` property
+* String substring: `.Substring()` method  
+* String search: `.IndexOf()` method
+* String replacement: `-replace` operator
+* String splitting: `-split` operator
+* String comparison: `-eq`, `-ne`, `-gt`, `-lt`, `-ge`, `-le` operators
+* String trimming: `.Trim()` method
  
 ## Regular Expressions
 
