@@ -18,7 +18,7 @@ Notable major features in UI++ include the following.
   * The Windows registry
   * Task sequence variables
 * A task sequence variable browser and editor.
-* Conditional execution of every element using VBScript expressions.
+* Conditional execution of every element using PowerShell expressions.
 * Inline variable replacement for any value using task sequence variables.
 * Active Directory authentication and authorization.
 * Customizable preflight checks and warnings.

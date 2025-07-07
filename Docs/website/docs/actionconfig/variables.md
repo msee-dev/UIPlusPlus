@@ -15,13 +15,13 @@ The following snippet puts the static value "Finance" into the BusinessUnit vari
 <Action Type="TSVar" Name="BusinessUnit">Finance</Action>
 ~~~
 
-You can also use the full power of VBScript to set the value of the variable.
+You can also use the full power of PowerShell to set the value of the variable.
 
 ~~~ xml
-<Action Type="TSVar" Name="LocationCode">Left("Amsterdam",5)</Action>
+<Action Type="TSVar" Name="LocationCode">("Amsterdam").Substring(0,5)</Action>
 ~~~
 
-The value specified is initially treated as a VBScript expression. If VBScript cannot evaluate the value, then the simple text of the value is placed in the variable; however, if the value is a valid VBScript expression, VBScript evaluates it. Seemingly simple text like **abc-def** is actually valid VBScript (because the "-" is a minus sign) and the VBScript evaluation results in the variable's value set to zero. To avoid this, enclose the value in double-quotes (") or set the **DontEval** attribute to **True**.
+The value specified is initially treated as a PowerShell expression. If PowerShell cannot evaluate the value, then the simple text of the value is placed in the variable; however, if the value is a valid PowerShell expression, PowerShell evaluates it. Seemingly simple text like **abc-def** is actually valid PowerShell (because the "-" is a minus sign) and the PowerShell evaluation results in the variable's value set to zero. To avoid this, enclose the value in double-quotes (") or set the **DontEval** attribute to **True**.
 
 ~~~ xml
 <Action Type="TSVar" Name="OSDComputerName">"Finance-123"</Action>
