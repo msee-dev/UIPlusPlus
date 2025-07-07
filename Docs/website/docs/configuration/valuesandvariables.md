@@ -18,9 +18,9 @@ For any attribute or value of any element in the configuration file, you can ins
 The following are multiple examples using variable replacement.
 
 ~~~ xml
-<Action Type="TSVar" Name="OSDComputerName" >"Prefix-" & Left("%XHWAssetTag%", 7)</Action>
+<Action Type="TSVar" Name="OSDComputerName" >"Prefix-" + ("%XHWAssetTag%").Substring(0, 7)</Action>
 
-<Action Type="TSVar" Name="OSDDomainOUName" Condition='"%XHWChassisType%" = "Laptop" Or "%XHWChassisType%" = "Desktop"'>ou=Computers,ou=%Location%,dc=domain,dc=com</Action>
+<Action Type="TSVar" Name="OSDDomainOUName" Condition='"%XHWChassisType%" -eq "Laptop" -or "%XHWChassisType%" -eq "Desktop"'>ou=Computers,ou=%Location%,dc=domain,dc=com</Action>
 
 <Action Type="Info" Name="FinalInfo" Title="Summary" ShowCancel="True" ShowBack="True" >
       <![CDATA[<b>System name:</b>  %OSDComputerName%<br><b>OU:</b>  %OSDDomainOUName%<br><b>Timezone:</b>  %Timezone%]]>
@@ -40,7 +40,7 @@ For any attribute that expects a Boolean value; i.e., **True** or **False**, pre
 
 The **Default** attribute for this example evaluates to the opposite of the value of the **SnagitFound** variable. Thus if **SnagitFound** is **True**, the opposite value, **False**, is instead used and vice-versa of course. If **SnagitFound** isn’t a valid Boolean value, then **False**  is passed.
 
-Boolean variable negation does not apply to **Condition** attributes. For Conditions attributes, use the VBScript Not operator.
+Boolean variable negation does not apply to **Condition** attributes. For Conditions attributes, use the PowerShell -not operator.
 
 ## Variable Editor
 
